@@ -1,0 +1,58 @@
+  <link rel="stylesheet" type="text/css" href="/ink/css/ink-flex.min.css">
+  <link rel="stylesheet" type="text/css" href="/ink/css/font-awesome.min.css">
+
+  <script type="text/javascript" src="/ink/js/modernizr.js"></script>
+  <script type="text/javascript">
+    Modernizr.load({
+      test: Modernizr.flexbox,
+      nope: "/ink/css/ink-legacy.min.css"
+    });
+  </script>
+
+  <script type="text/javascript" src="/ink/js/holder.js"></script>
+  <script type="text/javascript" src="/ink/js/ink-all.min.js"></script>
+  <script type="text/javascript" src="/ink/js/autoload.js"></script>
+
+  <style type="text/css">
+    html, body {
+      height: 100%;
+      background: #f0f0f0;
+    }
+    .wrap {
+      min-height: 100%;
+      height: auto !important;
+      height: 100%;
+      margin: 0 auto -120px;
+      overflow: auto;
+    }
+    .push, footer {
+      height: 120px;
+      margin-top: 0;
+    }
+    footer {
+      background: #ccc;
+      border: 0;
+    }
+    footer * {
+      line-height: inherit;
+    }
+    .top-menu {
+      background: #1a1a1a;
+    }
+    .link_img {
+      margin: 10px;
+    }
+    .img_fixed_size {
+      width: 300px;
+      height: 400px;
+    }
+    .img_and_a {
+      width:25%;
+      float:left;
+      display: block;
+    }
+    video {
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+  </style>
