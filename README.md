@@ -4,9 +4,11 @@
 
 requires ink files in a folder in html_files/ink
 
+```
 wget https://github.com/sapo/Ink/releases/download/3.1.10/ink-3.1.10.zip
 unzip ink-3.1.10.zip
 mv ink-3.1.10 html_files/ink
+```
 
 ## Invocation
 
