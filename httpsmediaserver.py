@@ -81,6 +81,7 @@ class AuthHandler(SimpleHTTPRequestHandler):
 
                     dir_files = os.listdir(MEDIA_DIR + '/' + name)
                     audio_files = sorted(filter(lambda x:x[-4:] == '.mp3', dir_files))
+                    print "HERE", audio_files
                     dir_files = sorted(filter(lambda x:x[-4:] == '.mp4', dir_files))
                     dir_lines = '\n'.join(map(lambda x:list_item.format(filename=x,dirname=name), dir_files))
                     audio_lines = '\n'.join(map(lambda x:list_item.format(filename=x,dirname=name), audio_files))
