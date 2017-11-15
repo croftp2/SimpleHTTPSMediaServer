@@ -80,8 +80,8 @@ class AuthHandler(SimpleHTTPRequestHandler):
                     audio_item = "<audio controls><source src='/file/{dirname}/{filename}' type='audio/mpeg'></audio><p>{filename}</p>"
 
                     dir_files = os.listdir(MEDIA_DIR + '/' + name)
-                    audio_files = filter(lambda x:x[-4:] == '.mp3', dir_files)
-                    dir_files = filter(lambda x:x[-4:] == '.mp4', dir_files)
+                    audio_files = sorted(filter(lambda x:x[-4:] == '.mp3', dir_files))
+                    dir_files = sorted(filter(lambda x:x[-4:] == '.mp4', dir_files))
                     dir_lines = '\n'.join(map(lambda x:list_item.format(filename=x,dirname=name), dir_files))
                     audio_lines = '\n'.join(map(lambda x:list_item.format(filename=x,dirname=name), audio_files))
 
