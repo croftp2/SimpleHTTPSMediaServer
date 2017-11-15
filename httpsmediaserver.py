@@ -77,13 +77,16 @@ class AuthHandler(SimpleHTTPRequestHandler):
                     year = open(MEDIA_DIR + "/" + name + "/year.txt").read().strip()
                     body_html = "<center>{}</center>"
                     list_item = "<video controls><source src='/file/{dirname}/{filename}' type='video/mp4'></video>"
+                    audio_item = "<audio controls><source src='/file/{dirname}/{filename}' type='audio/mpeg'></audio>"
 
                     dir_files = os.listdir(MEDIA_DIR + '/' + name)
+                    audio_files = filter(lambda x:x[-4:] == '.mp3', dir_files)
                     dir_files = filter(lambda x:x[-4:] == '.mp4', dir_files)
                     dir_lines = '\n'.join(map(lambda x:list_item.format(filename=x,dirname=name), dir_files))
+                    audio_lines = '\n'.join(map(lambda x:list_item.format(filename=x,dirname=name), audio_files))
 
 #                    body_html = body_html.format(filename="/file/" + name + '/' + dir_files[0])
-                    body_html = body_html.format(dir_lines)
+                    body_html = body_html.format(dir_lines + audio_lines)
 
                     self.wfile.write(title_html.read().format(name=name, year=year, body_html=body_html,common_css=COMMON_CSS))
 
